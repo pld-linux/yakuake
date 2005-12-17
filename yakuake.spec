@@ -3,7 +3,7 @@ Summary:	Very powerful Quake style Konsole
 Summary(pl):	Rozbudowany emulator terminala w stylu Quake
 Version:	2.7.3
 Release:	0.2
-License:	GPL
+License:	GPL v2
 Group:		X11/Applications
 Source0:	http://download.softpedia.com/linux/%{name}-%{version}.tar.bz2
 # Source0-md5:	98576f75c94f75756ef4acb18ef93a5e
@@ -52,7 +52,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README NEWS COPYING AUTHORS
+%doc AUTHORS 
 %attr(755,root,root) %{_bindir}/yakuake
 %{_desktopdir}/*.desktop
 %{_datadir}/apps/yakuake/default/tabs.skin
