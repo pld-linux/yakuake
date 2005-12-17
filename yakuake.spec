@@ -7,7 +7,6 @@ License:	GPL
 Group:		X11/Applications
 Source0:	http://download.softpedia.com/linux/%{name}-%{version}.tar.bz2
 # Source0-md5:	98576f75c94f75756ef4acb18ef93a5e
-Patch0:		%{name}-po.patch
 URL:		http://yakuake.uv.ro/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -23,7 +22,6 @@ Konsola KDE wygl±dem przypominaj±ca t± z Quake.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 cp -f /usr/share/automake/config.sub admin
