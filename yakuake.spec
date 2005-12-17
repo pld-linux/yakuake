@@ -2,11 +2,12 @@ Name:		yakuake
 Summary:	Very powerful Quake style Konsole
 Summary(pl):	Rozbudowany emulator terminala w stylu Quake
 Version:	2.7.3
-Release:	0.1
+Release:	0.2
 License:	GPL
 Group:		X11/Applications
 Source0:	http://download.softpedia.com/linux/%{name}-%{version}.tar.bz2
 # Source0-md5:	98576f75c94f75756ef4acb18ef93a5e
+Patch0:		%{name}-desktop.patch
 URL:		http://yakuake.uv.ro/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -22,6 +23,7 @@ Konsola KDE wygl±dem przypominaj±ca t± z Quake.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 cp -f /usr/share/automake/config.sub admin
@@ -36,10 +38,14 @@ cp -f /usr/share/automake/config.sub admin
 %{__make}
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf $RPM_BUILD_ROOT%{_desktopdir}
+
+install -d $RPM_BUILD_ROOT%{_desktopdir}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+mv -f $RPM_BUILD_ROOT{%{_datadir}/applnk/Utilities,%{_desktopdir}}/yakuake.desktop
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -48,8 +54,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README NEWS COPYING AUTHORS
 %attr(755,root,root) %{_bindir}/yakuake
-#%{_menudir}/%{name}
-%{_datadir}/applnk/Utilities/yakuake.desktop
+%{_desktopdir}/*.desktop
 %{_datadir}/apps/yakuake/default/tabs.skin
 %{_datadir}/apps/yakuake/default/tabs/*.png
 %{_datadir}/apps/yakuake/default/title.skin
