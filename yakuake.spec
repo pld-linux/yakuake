@@ -44,7 +44,8 @@ install -d $RPM_BUILD_ROOT%{_desktopdir}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-mv -f $RPM_BUILD_ROOT{%{_datadir}/applnk/Utilities,%{_desktopdir}}/yakuake.desktop
+
+mv $RPM_BUILD_ROOT{%{_datadir}/applnk/Utilities,%{_desktopdir}}/yakuake.desktop
 
 %find_lang %{name}
 
