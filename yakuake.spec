@@ -1,12 +1,12 @@
 Summary:	Very powerful Quake style Konsole
 Summary(pl):	Rozbudowany emulator terminala w stylu Quake
 Name:		yakuake
-Version:	2.7.4
+Version:	2.7.5
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://www.kde-apps.org/content/files/29153-%{name}-%{version}.tar.bz2
-# Source0-md5:	607370615c543825f098baad3684eb50
+# Source0-md5:	6905f9a6d448c7bfc818cd2d7c88cab4
 Patch0:		%{name}-desktop.patch
 URL:		http://yakuake.uv.ro/
 BuildRequires:	autoconf
