@@ -1,4 +1,5 @@
 Summary:	Very powerful Quake style Konsole
+Summary(de):	Ein Quake ähnlicher Konsole Emulator
 Summary(pl):	Rozbudowany emulator terminala w stylu Quake
 Name:		yakuake
 Version:	2.7.5
@@ -17,6 +18,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 A KDE konsole which looks like those found in Quake.
+
+%description -l de
+Eine KDE Konsole die der aus Quake ähnelt.
 
 %description -l pl
 Konsola KDE wygl±dem przypominaj±ca tê z Quake.
