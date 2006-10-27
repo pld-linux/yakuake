@@ -1,17 +1,14 @@
 Summary:	Very powerful Quake style Konsole
-Summary(de):	Ein Quake ähnlicher Konsole Emulator
 Summary(pl):	Rozbudowany emulator terminala w stylu Quake
 Name:		yakuake
 Version:	2.7.5
-Release:	2
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://www.kde-apps.org/content/files/29153-%{name}-%{version}.tar.bz2
 # Source0-md5:	6905f9a6d448c7bfc818cd2d7c88cab4
 Patch0:		%{name}-desktop.patch
-Patch1:		kde-ac260.patch
-Patch2:		kde-ac260-lt.patch
-URL:		http://extragear.kde.org/apps/yakuake/
+URL:		http://yakuake.uv.ro/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	kdelibs-devel >= 9:3.2.0
@@ -21,17 +18,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 A KDE konsole which looks like those found in Quake.
 
-%description -l de
-Eine KDE Konsole die der aus Quake ähnelt.
-
 %description -l pl
 Konsola KDE wygl±dem przypominaj±ca tê z Quake.
 
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
-%patch2 -p1
 
 %build
 cp -f /usr/share/automake/config.sub admin
