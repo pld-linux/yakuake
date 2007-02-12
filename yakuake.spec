@@ -1,6 +1,6 @@
 Summary:	Very powerful Quake style Konsole
-Summary(de.UTF-8):   Ein Quake ähnlicher Konsole Emulator
-Summary(pl.UTF-8):   Rozbudowany emulator terminala w stylu Quake
+Summary(de.UTF-8):	Ein Quake ähnlicher Konsole Emulator
+Summary(pl.UTF-8):	Rozbudowany emulator terminala w stylu Quake
 Name:		yakuake
 Version:	2.7.5
 Release:	2
