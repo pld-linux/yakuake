@@ -11,6 +11,7 @@ Source0:	http://www.kde-apps.org/content/files/29153-%{name}-%{version}.tar.bz2
 Patch0:		%{name}-desktop.patch
 Patch1:		kde-ac260.patch
 Patch2:		kde-ac260-lt.patch
+Patch3:		kde-am.patch
 URL:		http://extragear.kde.org/apps/yakuake/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -32,6 +33,7 @@ Konsola KDE wyglądem przypominająca tę z Quake.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 %build
 cp -f /usr/share/automake/config.sub admin
