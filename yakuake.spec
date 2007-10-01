@@ -1,14 +1,13 @@
-%define	snap	beta1
 Summary:	Very powerful Quake style Konsole
 Summary(de.UTF-8):	Ein Quake ähnlicher Konsole Emulator
 Summary(pl.UTF-8):	Rozbudowany emulator terminala w stylu Quake
 Name:		yakuake
 Version:	2.8
-Release:	0.%{snap}.1
+Release:	0.1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://download.berlios.de/yakuake/%{name}-%{version}-beta1.tar.bz2
-# Source0-md5:	1de02747da716b304f9244032fda7eb4
+Source0:	http://download.berlios.de/yakuake/%{name}-%{version}.tar.bz2
+# Source0-md5:	595f704fd098db01b29b16329a598cb2
 Patch0:		%{name}-desktop.patch
 URL:		http://extragear.kde.org/apps/yakuake/
 BuildRequires:	autoconf
@@ -27,7 +26,7 @@ Eine KDE Konsole die der aus Quake ähnelt.
 Konsola KDE wyglądem przypominająca tę z Quake.
 
 %prep
-%setup -q -n %{name}-%{version}-%{snap}
+%setup -q
 
 %build
 cp -f /usr/share/automake/config.sub admin
