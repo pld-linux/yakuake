@@ -3,7 +3,7 @@ Summary(de.UTF-8):	Ein Quake ähnlicher Konsole Emulator
 Summary(pl.UTF-8):	Rozbudowany emulator terminala w stylu Quake
 Name:		yakuake
 Version:	2.8
-Release:	0.1
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://download.berlios.de/yakuake/%{name}-%{version}.tar.bz2
