@@ -2,17 +2,15 @@ Summary:	Very powerful Quake style Konsole
 Summary(de.UTF-8):	Ein Quake ähnlicher Konsole Emulator
 Summary(pl.UTF-8):	Rozbudowany emulator terminala w stylu Quake
 Name:		yakuake
-Version:	2.8.1
+Version:	2.9
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://download.berlios.de/yakuake/%{name}-%{version}.tar.bz2
-# Source0-md5:	b638dd6ec3d7ca50ed28cbe5f15cc56b
-Patch0:		%{name}-desktop.patch
+# Source0-md5:	e7d101b4e0e63f28ed7999d2ce271f5e
 URL:		http://extragear.kde.org/apps/yakuake/
-BuildRequires:	autoconf
-BuildRequires:	automake
-BuildRequires:	kdelibs-devel >= 9:3.2.0
+BuildRequires:	cmake
+BuildRequires:	kde4-kdelibs-devel
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -29,22 +27,18 @@ Konsola KDE wyglądem przypominająca tę z Quake.
 %setup -q
 
 %build
-cp -f /usr/share/automake/config.sub admin
-%{__make} -f admin/Makefile.common cvs
-%configure \
-%if "%{_lib}" == "lib64"
-		--enable-libsuffix=64 \
-%endif
-		--%{?debug:en}%{!?debug:dis}able-debug%{?debug:=full} \
-		--with-qt-libraries=%{_libdir}
+install -d build
+cd build
+%cmake \
+	-DCMAKE_INSTALL_PREFIX=%{_prefix} \
+	../
 
 %{__make}
 
 %install
 
 rm -rf $RPM_BUILD_ROOT
-%{__make} install \
-	xdg_appsdir=%{_desktopdir} \
+%{__make} -C build install \
 	DESTDIR=$RPM_BUILD_ROOT
 
 %find_lang %{name}
@@ -56,15 +50,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS
 %attr(755,root,root) %{_bindir}/yakuake
-%{_desktopdir}/*.desktop
-%dir %{_datadir}/apps/yakuake
-%dir %{_datadir}/apps/yakuake/*
-%{_datadir}/apps/yakuake/*/tabs.skin
-%{_datadir}/apps/yakuake/*/icon.png
-%dir %{_datadir}/apps/yakuake/*/tabs
-%{_datadir}/apps/yakuake/*/tabs/*.png
-%{_datadir}/apps/yakuake/*/title.skin
-%dir %{_datadir}/apps/yakuake/*/title
-%{_datadir}/apps/yakuake/*/title/*.png
-%{_datadir}/config.kcfg/*.kcfg
+%{_desktopdir}/kde4/*.desktop
+%{_datadir}/apps/yakuake
 %{_iconsdir}/hicolor/*x*/apps/yakuake.png
