@@ -8,7 +8,7 @@ License:	GPL v2
 Group:		X11/Applications
 Source0:	http://download.berlios.de/yakuake/%{name}-%{version}.tar.bz2
 # Source0-md5:	e1671e6709146c6c85a5884176d99c4b
-URL:		http://extragear.kde.org/apps/yakuake/
+URL:		http://yakuake.kde.org/
 BuildRequires:	QtCore-devel
 BuildRequires:	QtDBus-devel
 BuildRequires:	QtGui-devel
