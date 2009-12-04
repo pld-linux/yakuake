@@ -14,10 +14,13 @@ BuildRequires:	QtDBus-devel
 BuildRequires:	QtGui-devel
 BuildRequires:	QtNetwork-devel
 BuildRequires:	QtSvg-devel
+BuildRequires:	automoc4
 BuildRequires:	cmake
+BuildRequires:	gettext-devel
 BuildRequires:	kde4-kdelibs-devel
-BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	qt4-build
+BuildRequires:	qt4-qmake
+BuildRequires:	rpmbuild(macros) >= 1.129
 # for libkonsolepart
 Requires:	kde4-kdebase-konsole
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
