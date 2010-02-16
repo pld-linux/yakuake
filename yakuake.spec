@@ -3,7 +3,7 @@ Summary(de.UTF-8):	Ein Quake ähnlicher Konsole Emulator
 Summary(pl.UTF-8):	Rozbudowany emulator terminala w stylu Quake
 Name:		yakuake
 Version:	2.9.6
-Release:	2
+Release:	3
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://download.berlios.de/yakuake/%{name}-%{version}.tar.bz2
@@ -51,9 +51,6 @@ cd build
 rm -rf $RPM_BUILD_ROOT
 %{__make} -C build install \
 	DESTDIR=$RPM_BUILD_ROOT
-
-# ?
-rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/hne
 
 %find_lang %{name}
 
